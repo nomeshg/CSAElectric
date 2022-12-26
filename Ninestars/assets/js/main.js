@@ -1,9 +1,19 @@
-/**
-* Template Name: Ninestars - v4.9.1
-* Template URL: https://bootstrapmade.com/ninestars-free-bootstrap-3-theme-for-creative/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
+
+// function sendEmail(){
+//   Email.send({
+//     Host : "smtp.elasticemail.com",
+//     Username : "username",
+//     Password : "password",
+//     To : 'them@website.com',
+//     From : "you@isp.com",
+//     Subject : "This is the subject",
+//     Body : "And this is the body"
+// }).then(
+//   message => alert(message)
+// );
+// }
+
+
 (function() {
   "use strict";
 
