@@ -79,7 +79,7 @@ h6,
 # Header
 --------------------------------------------------------------*/
 #header {
-  height: 120px;
+  height: 72px;
   transition: all 0.5s;
   z-index: 997;
   transition: all 0.5s;
@@ -104,7 +104,8 @@ h6,
 #header .logo img {
   padding: 0;
   margin: 0;
-  max-height: 120px;
+  width:120px;
+  max-height: 60px;
 }
 
 #main {
