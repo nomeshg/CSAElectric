@@ -417,7 +417,7 @@
           </div>
 
           <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-            <form onsubmit="sendEmail(); reset(); return false" role="form" class="php-email-form">
+            <form onsubmit="sendEmail(); reset(); return false" role="form" class="php-email-form" id="contactUsForm">
               <div class="row">
                 <div class="form-group col-md-6">
                   <label for="name">Your Name</label>
@@ -527,19 +527,24 @@
 
   <script>
     function sendEmail() {
+
+        let thisForm = document.getElementById("contactUsForm");
+
+        thisForm.querySelector('.loading').classList.remove('d-block');
+        thisForm.querySelector('.sent-message').classList.remove('d-block');
+
         const xhr  = new XMLHttpRequest();
         const url = "./api/email";
         xhr.open("POST", url);
         xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-
-        
         xhr.send(JSON.stringify(getEmailDetail()));
         
-        xmlhttp.onreadystatechange = function() {
-      if (xmlhttp.readyState === 4) {
-        var response = JSON.parse(xmlhttp.responseText);
-          if (xmlhttp.status === 200) {
-            alert("Thank you for contacting us. We will get back to you shortly");
+        xhr.onreadystatechange = function() {
+      if (xhr.readyState === 4) {
+          if (xhr.status === 200) {
+            thisForm.querySelector('.sent-message').classList.add('d-block');
+            thisForm.reset(); 
+            // alert("Thank you for contacting us. We will get back to you shortly");
           } else {
              console.log('failed to send your information.');
           }
